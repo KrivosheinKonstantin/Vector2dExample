@@ -22,22 +22,25 @@ Vector2d::Vector2d(const Vector2d& vector)
 
 Vector2d::~Vector2d() {};
 
-void Vector2d::sum(Vector2d vector)
+Vector2d Vector2d::sum(Vector2d vector)
 {
 	x = x + vector.x;
 	y = y + vector.y;
+	return Vector2d(x, y);
 }
 
-void Vector2d::sub(Vector2d vector)
+Vector2d Vector2d::sub(Vector2d vector)
 {
 	x = x - vector.x;
 	y = y - vector.y;
+	return Vector2d(x, y);
 }
 
-void Vector2d::mult(double n)
+Vector2d Vector2d::mult(double n)
 {
 	x = x * n;
 	y = y * n;
+	return Vector2d(x, y);
 }
 
 double Vector2d::scalarMult(Vector2d vector)

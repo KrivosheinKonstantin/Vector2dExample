@@ -16,12 +16,16 @@ int main()
     A.scalarMult(B);
     A.print();*/
 
-    A.print();
+   /* A.print();
     B.print();
     cout << A.angle(B) << endl;
     cout << A.tg(B) << endl;
-    cout << B.length() << endl;
+    cout << B.length() << endl;*/
 
+    A.print();
+    B.print();
+    A.mult(3);
+    A.print();
 }
 
 
