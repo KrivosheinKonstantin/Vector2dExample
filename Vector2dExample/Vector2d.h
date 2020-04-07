@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 class Vector2d
 {
 private: double x, y; 
@@ -23,5 +24,17 @@ public:
 	double length();
 	double angle(Vector2d);
 	double tg(Vector2d);
+
+	Vector2d operator+(const Vector2d& vector) const;
+	Vector2d operator-(const Vector2d& vector) const;
+	double operator*(const Vector2d& vector) const;
+	Vector2d operator*(double) const;
+	friend Vector2d operator*(double, Vector2d&);
+	Vector2d operator++(int);
+	Vector2d operator--(int);
+	const Vector2d& operator += (const Vector2d&);
+	const Vector2d& operator -= (const Vector2d&);
+	const Vector2d& operator *= (const Vector2d&);
+	operator std::string();
 };
 

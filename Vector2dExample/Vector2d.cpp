@@ -1,5 +1,6 @@
 #include "Vector2d.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 Vector2d::Vector2d(double x, double y)
@@ -70,3 +71,70 @@ void Vector2d::print()
 	cout << "Vector(" << x << ";" << y << ")" << endl;
 }
 
+Vector2d Vector2d::operator+(const Vector2d& vector) const
+{
+	return Vector2d(x + vector.x, y + vector.y);
+}
+
+Vector2d Vector2d::operator-(const Vector2d& vector) const
+{
+	return Vector2d(x - vector.x, y - vector.y);
+}
+
+double Vector2d::operator*(const Vector2d& vector) const
+{
+	return (x * vector.x + y * vector.y);
+}
+
+Vector2d Vector2d::operator*(double n) const
+{
+	return Vector2d(x * n, y * n);
+}
+
+Vector2d operator*(double n, Vector2d& vector)
+{
+	return vector * n;
+}
+
+Vector2d Vector2d::operator++(int)
+{
+	Vector2d temp(x, y);
+	x++;
+	y++;
+	return temp;
+}
+
+Vector2d Vector2d::operator--(int)
+{
+	Vector2d temp(x, y);
+	x--;
+	y--;
+	return temp;
+}
+
+const Vector2d& Vector2d::operator+=(const Vector2d& vector)
+{
+	x += vector.x;
+	y += vector.y;
+	return *this;
+}
+
+const Vector2d& Vector2d::operator-=(const Vector2d& vector)
+{
+	x -= vector.x;
+	y -= vector.y;
+	return *this;
+}
+
+const Vector2d& Vector2d::operator*=(const Vector2d& vector)
+{
+	x *= vector.x;
+	y *= vector.y;
+	return *this;
+}
+
+Vector2d::operator std::string()
+{
+	string s = "(" + to_string(x) + "," + to_string(y) + ")";
+	return s;
+}
